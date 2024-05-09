@@ -13,6 +13,18 @@ resource "aws_subnet" "deploy_subnet_public" {
   map_public_ip_on_launch = true
 }
 
+resource "aws_subnet" "deploy_subnet_public2" {
+  vpc_id     = aws_vpc.deploy_vpc.id
+  cidr_block = "10.0.3.0/24"
+
+  tags = {
+    Name = "public2-subnet"
+  }
+
+  availability_zone = "ap-northeast-1a"
+
+  map_public_ip_on_launch = true
+}
 # private subnet
 
 resource "aws_subnet" "deploy_subnet_private1" {

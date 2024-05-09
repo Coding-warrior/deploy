@@ -4,7 +4,7 @@ resource "aws_lb" "deploy_load_balancer" {
   load_balancer_type = "application"
 #   security_groups    = ["sg-0f3afee3ae62bcc3b"]
   security_groups = [aws_security_group.web_server_sg_private1_tf.id]
-  subnets            = [aws_subnet.deploy_subnet_public.id , aws_subnet.deploy_subnet_private1.id ]
+  subnets            = [aws_subnet.deploy_subnet_public.id , aws_subnet.deploy_subnet_public2.id ]
 
 }
 
